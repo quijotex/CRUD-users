@@ -1,22 +1,36 @@
+import line from "/Line.svg"
+import birth from "/Birth.svg"
+import edit from "/Edit.svg"
+import delet from "/Delete.svg"
+import iconDelete from "/IconDelete.svg"
+
 const UsersList = ({ userList, deleteUser, selectUser, setIsVisible }) => {
     return (
       <section className="section-list">
-        <h2>Registered users</h2>
-        <button onClick={() => setIsVisible(true)}>Create new user</button>
+        <div className="registered-button">
+        <h2>Users</h2>
+        <button onClick={() => setIsVisible(true)}><span>+</span> Create new user</button>
+        </div>
         <ul className="users">
           {userList?.map((user) => (
-            <li key={user.id}>
+            <li className="list-user" key={user.id}>
               <h4>{user.first_name} {user.last_name}</h4>
-              <p>
-                <span>Email</span> {user.email}
-              </p>
-              <p>
-                <span>Birthday</span> {user.birthday}
-              </p>
-              <button onClick={() => deleteUser(user.id)}>Eliminar</button>
+              <img src={line} alt=""/>
+                <div className="email-birth">
+                  <span>Email</span>
+                  <p>{user.email}</p>
+                  <span> Birthday</span> 
+                  <p> 
+                  <img className="birth-svg" src={birth} alt=""/>
+                    {user.birthday}</p>
+                </div>
+              <img src={line} alt=""/>
+              <div className="button-delete-edit">
+              <button className="delete" onClick={() => deleteUser(user.id)}><img  src={delet} alt=""/></button>
   
               <button onClick={() => {selectUser(user);
-                 setIsVisible(true)}}>Editar</button>
+                 setIsVisible(true)}}><img className="edit" src={edit} alt=""/></button>
+                 </div>
             </li>
           ))}
         </ul>

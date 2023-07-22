@@ -6,6 +6,7 @@
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 .div-usersForm.is-visible {
     display: flex;
@@ -43,14 +44,16 @@
 }
 .input-container input {
   height: 35px;
+  padding-left: 5px;
 }
 .input-container input::placeholder {
-    padding-left: 5px;
+   
     font-family: 'Roboto', sans-serif;
 }
 input[type="date" i]  {
-    padding-left: 5px;
+    padding-right: 5px;
     font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
 }
 .input-container button {
   margin-top: 5px;
@@ -59,4 +62,5 @@ input[type="date" i]  {
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
+  cursor: pointer;
 }

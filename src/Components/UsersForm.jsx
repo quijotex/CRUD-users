@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) => {
   const { register, handleSubmit, reset } = useForm();
@@ -7,7 +7,6 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) 
 
   useEffect(() => {
     if (selectedUser) {
-      //prellenar el formulario
       reset(selectedUser);
     } else {
       reset({
@@ -27,15 +26,13 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) 
     addUser(data)  
   }
   }
-  const modal = () => {
-    setIsVisible()
-  }
+  
 
   return (
     <div className={`div-usersForm ${isVisible? "is-visible" : ""}`}>
     <form className="form-users" onSubmit={handleSubmit(submit)}>
       <div className="title-button">
-      <h2>New user</h2>
+      <h2>{selectedUser === null? "New user" : "User"}</h2>
       <button className="button-close" onClick={() => setIsVisible(false)}>x</button>
       </div>
       <div className="input-container">
@@ -83,7 +80,7 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) 
         />
       </div>
       <div className="input-container">
-      <button >Add new user</button>
+      <button>{selectedUser === null? "Add new user" : "Update user"}</button>
       </div>
     </form>
     </div>

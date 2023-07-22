@@ -1,8 +1,90 @@
 .users {
- display: flex;
- flex-wrap: wrap;
- gap: 20px;
- justify-content: center;
- align-items: center;
- height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+ 
+  height: 100vh;
+  padding: 0px 50px 100px 50px;
+  font-family: 'Roboto', sans-serif;
+}
+.registered-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 125px 40px 125px;
+}
+.registered-button h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.125rem;
+}
+.registered-button button {
+  width: 227px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #555A88;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+}
+.registered-button button:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.registered-button button span {
+  font-size: 1.2rem;
+}
+.list-user {
+  width: 381px;
+  height: 274px;
+  border-radius: 4px;
+  border: 1px solid #E5E5E5;
+  list-style: none;
+
+}
+.list-user h4 {
+  text-align: center;
+  font-size: 1.5625rem;
+  padding: 20px 0px 0px;
+}
+.list-user img {
+ position: relative;
+ left: 20px;
+}
+.email-birth {
+  padding: 20px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.list-user span {
+  text-transform: uppercase;
+  color: #D3D3D3;
+}
+.list-user .birth-svg {
+  left: 0;
+  top: 2px;
+  margin-right: 5px;
+}
+.list-user button {
+  width: 43px;
+  height: 43px;
+}
+.button-delete-edit {
+display: flex;
+justify-content: flex-end;
+gap: 5px;
+}
+.button-delete-edit img {
+  left: 0;
+}
+.button-delete-edit button {
+  margin: 5px 20px 0px 0px;
+}
+.button-delete-edit .delete {
+  background-color: #D85D5D;
+  border-style: none;
 }
