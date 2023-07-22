@@ -1,0 +1,32 @@
+.div-usersForm {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #80808081;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-users {
+   height: 70%;
+   width: 25%;
+   background-color: white;
+   padding: 25px;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 2px;
+}
+.input-container input {
+  height: 30px;
+}
+.form-users button {
+  position: relative;
+  top: 20px;
+  height: 30px;
+  width: 215px;
+  background:  #555A88;
+  color: white;
+}

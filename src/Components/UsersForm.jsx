@@ -28,7 +28,8 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <div className="div-usersForm">
+    <form className="form-users" onSubmit={handleSubmit(submit)}>
       <h2>New user</h2>
 
       <div className="input-container">
@@ -36,14 +37,16 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
         <input
           type="text"
           id="p-first_name"
+          placeholder="Your name"
           {...register("first_name", { required: true })}
         />
       </div>
       <div className="input-container">
-        <label htmlFor="p-last_name">Last Name</label>
+        <label htmlFor="p-last_name">Last Names</label>
         <input
           type="text"
           id="p-last_name"
+          placeholder="Your last names"
           {...register("last_name", { required: true })}
         />
       </div>
@@ -52,6 +55,7 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
         <input
           type="text"
           id="p-email"
+          placeholder="Your email"
           {...register("email", { required: true })}
         />
       </div>
@@ -60,6 +64,7 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
         <input
           type="password"
           id="p-password"
+          placeholder="Enter your password"
           {...register("password", { required: true })}
         />
       </div>
@@ -76,6 +81,7 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
 
       <button>Add new user</button>
     </form>
+    </div>
   );
 };
 

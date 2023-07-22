@@ -65,9 +65,9 @@ function App() {
 
   return (
     <main>
-     {/* <UsersForm addUser={addUser} 
+     <UsersForm addUser={addUser} 
       selectedUser={selectedUser}
-  editUser={editUser} />*/}
+  editUser={editUser} />
 
       <UsersList
         userList={userList}
