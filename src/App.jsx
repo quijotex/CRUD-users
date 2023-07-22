@@ -8,6 +8,7 @@ import "./App.css"
 function App() {
   const [userList, setUserList] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [ isVisible, setIsVisible ] = useState(false)
 
   const getAllUsers = () => {
     axios
@@ -23,11 +24,6 @@ function App() {
   }, []);
 
   const addUser = (newUser) => {
-    //axios para enviar informacion a la api
-    /*
-      axios.post("url", body={})
-    */
-
     axios
       .post("https://users-crud.academlo.tech/users/", newUser)
       .then(() => {
@@ -38,9 +34,6 @@ function App() {
   };
 
   const deleteUser = (id) => {
-    /*
-    axios.delete(`url/${parametro}`)
-    */
 
     axios
       .delete(`https://users-crud.academlo.tech/users/${id}/`)
@@ -53,26 +46,29 @@ function App() {
   };
 
   const editUser = user => {
-    /* axios.put('url/${id}', body) 
-    el body es la info de carga, lo que mandamos hacia la API*/
-
+    
     axios
     .put(`https://users-crud.academlo.tech/users/${user.id}/`, user)
     .then(() => getAllUsers(),
     setSelectedUser(null))
     .catch(error => console.error(error))
   }
+ 
 
   return (
     <main>
      <UsersForm addUser={addUser} 
       selectedUser={selectedUser}
-  editUser={editUser} />
+  editUser={editUser}
+  setIsVisible={setIsVisible}
+  isVisible={isVisible}
+   />
 
       <UsersList
         userList={userList}
         deleteUser={deleteUser}
         selectUser={selectUser}
+        setIsVisible={setIsVisible}
       />
     </main>
   );

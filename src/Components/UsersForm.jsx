@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const UsersForm = ({ addUser, selectedUser, editUser }) => {
+const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) => {
   const { register, handleSubmit, reset } = useForm();
+ 
 
   useEffect(() => {
     if (selectedUser) {
@@ -26,12 +27,17 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
     addUser(data)  
   }
   }
+  const modal = () => {
+    setIsVisible()
+  }
 
   return (
-    <div className="div-usersForm">
+    <div className={`div-usersForm ${isVisible? "is-visible" : ""}`}>
     <form className="form-users" onSubmit={handleSubmit(submit)}>
+      <div className="title-button">
       <h2>New user</h2>
-
+      <button className="button-close" onClick={() => setIsVisible(false)}>x</button>
+      </div>
       <div className="input-container">
         <label htmlFor="p-first_name">First Name</label>
         <input
@@ -76,10 +82,9 @@ const UsersForm = ({ addUser, selectedUser, editUser }) => {
           {...register("birthday", { required: true })}
         />
       </div>
-      
-     
-
-      <button>Add new user</button>
+      <div className="input-container">
+      <button >Add new user</button>
+      </div>
     </form>
     </div>
   );

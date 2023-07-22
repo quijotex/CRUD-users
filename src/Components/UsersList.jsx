@@ -1,8 +1,8 @@
-const UsersList = ({ userList, deleteUser, selectUser }) => {
+const UsersList = ({ userList, deleteUser, selectUser, setIsVisible }) => {
     return (
       <section className="section-list">
         <h2>Registered users</h2>
-  
+        <button onClick={() => setIsVisible(true)}>Create new user</button>
         <ul className="users">
           {userList?.map((user) => (
             <li key={user.id}>
@@ -15,7 +15,8 @@ const UsersList = ({ userList, deleteUser, selectUser }) => {
               </p>
               <button onClick={() => deleteUser(user.id)}>Eliminar</button>
   
-              <button onClick={() => selectUser(user)}>Editar</button>
+              <button onClick={() => {selectUser(user);
+                 setIsVisible(true)}}>Editar</button>
             </li>
           ))}
         </ul>
