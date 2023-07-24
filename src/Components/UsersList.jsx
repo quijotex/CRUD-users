@@ -6,13 +6,11 @@ import delet from "/Delete.svg"
 
 const UsersList = ({ userList, selectUser, setIsVisible, setIsOpen, setIsDeleted, setFirstName, setLastName, setSelectedUser }) => {
 
- 
-
     return (
       <section className="section-list">
         <div className="registered-button">
         <h2>Users</h2>
-        <button onClick={() => {setSelectedUser(null), setIsVisible(true)}}><span>+</span> Create new user</button>
+        <button onClick={() => {setSelectedUser(null), setIsVisible(true)}}><span>+</span><p> Create new user</p></button>
         </div>
         <ul className="users">
           {userList?.map((user) => (
@@ -20,7 +18,7 @@ const UsersList = ({ userList, selectUser, setIsVisible, setIsOpen, setIsDeleted
               <div className="full-name">
               <h4>{user.first_name} {user.last_name}</h4>
               </div>
-              <img src={line} alt=""/>
+              <img className="lines" src={line} alt=""/>
                 <div className="email-birth">
                   <span>Email</span>
                   <p>{user.email}</p>
@@ -29,7 +27,7 @@ const UsersList = ({ userList, selectUser, setIsVisible, setIsOpen, setIsDeleted
                   <img className="birth-svg" src={birth} alt=""/>
                     {user.birthday}</p>
                 </div>
-              <img src={line} alt=""/>
+              <img className="lines" src={line} alt=""/>
               <div className="button-delete-edit">
               <button className="delete" onClick={() => {setIsOpen(true);setIsDeleted(user.id); setFirstName(user.first_name); setLastName(user.last_name)}}><img  src={delet} alt=""/></button>
   

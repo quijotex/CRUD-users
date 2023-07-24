@@ -1,6 +1,7 @@
 @import url(./Styles/UsersList.css);
 @import url(./Styles/UsersForm.css);
 @import url(./Styles/ExtraModal.css);
+@import url(./Styles/ResponsiveDesign.css);
 
 * {
     margin: 0;

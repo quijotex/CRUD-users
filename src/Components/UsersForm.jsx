@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 
-const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible, setIsSuccesful, setSelectedUser}) => {
+const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible, setIsSuccesful, setSelectedUser, setIsCreated, setFirstName, setLastName }) => {
+
   const { register, handleSubmit, reset } = useForm();
  
 
@@ -24,25 +25,36 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible, s
     editUser(data)
     editedUser(data)
   } else {
-    addUser(data)  
+    addUser(data)
+    addNewUser(data)
   }
   }  
+
 const editedUser = (change) => {
   for(let user in change) {
-  if(change[user]  !== selectedUser[user] ) {
+  if(change[user] !== selectedUser[user]) {
     setSelectedUser(null)
-    setIsVisible(false)
+    setIsVisible(false)  
     setIsSuccesful(true)
-    
-  }}}
+  }}
+}
+
+const addNewUser = (newUser) => {
+  for(let i in newUser){
+    if(newUser[i] !== null) {
+      setIsVisible(false)
+      setFirstName(newUser.first_name)
+      setLastName(newUser.last_name)
+      setIsCreated(true)
+    }
+  }
+}
 
   return (
     <div className={`div-usersForm ${isVisible? "is-visible" : ""}`}>
+      <button className="button-close" onClick={() => setIsVisible(false)}>x</button>
     <form className="form-users" onSubmit={handleSubmit(submit)}>
-      <div className="title-button">
       <h2>{selectedUser === null? "New user" : "User"}</h2>
-      <button className="button-close" onClick={() =>setIsVisible(false)}>x</button>
-      </div>
       <div className="input-container">
         <label htmlFor="p-first_name">First Name</label>
         <input
@@ -88,7 +100,7 @@ const editedUser = (change) => {
         />
       </div>
       <div className="input-container">
-      <button onClick={() => setIsVisible(false)}>{selectedUser === null? "Add new user" : "Update user"}</button>
+      <button>{selectedUser === null? "Add new user" : "Update user"}</button>
       </div>
     </form>
     </div>

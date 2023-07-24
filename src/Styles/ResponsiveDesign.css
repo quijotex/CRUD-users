@@ -1,0 +1,84 @@
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+    .registered-button button {
+        width: 140px;
+    }
+    .list-user {
+        width: 340px;
+        height: 240px;
+    }
+    .list-user .lines {
+        width: 300px;
+    }
+    .form-users {
+        height: 460px;
+        width: 300px;
+    }
+    .button-close {
+        bottom: 215px;
+        left: 290px;
+    }
+    .modal-content button, .update-content button, .create-content button, .delete-content button, .error-content button
+    {
+      width: 60px;
+    }
+    .modal-content, .error-content  
+    {
+    width: 340px;
+    height: 230px;
+    }
+    .update-content, .create-content, .delete-content {
+        width: 310px;
+        height: 180px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .registered-button {
+        padding: 50px 50px 40px 50px;
+    }
+    .list-user .lines {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 11px;
+    }
+    .list-user {
+        height: 220px;
+    }
+    .list-user .lines {
+        width: 230px;
+    }
+}
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 10px;
+    }
+    .list-user .lines {
+        width: 180px;
+    }
+    .registered-button button {
+        width: 115px;
+        height: 35px;
+    }
+    .form-users {
+        height: 445px;
+        width: 260px;
+    }
+    .button-close {
+        bottom: 205px;
+        left: 250px;
+    }
+    .update-content, .create-content, .delete-content {
+        width: 280px;
+        height: 170px;
+    }
+    .modal-content, .error-content  
+    {
+    width: 290px;
+    height: 190px;
+    }
+}

@@ -29,6 +29,9 @@
   cursor: pointer;
   border: none;
 }
+.registered-button button p {
+  font-size: 1rem;
+}
 .registered-button button:hover {
   transform: scale(1.1);
   transition: 0.5s;
@@ -58,8 +61,8 @@
   overflow: hidden;
 }
 .list-user img {
- position: relative;
- left: 20px;
+  position: relative;
+  left: 20px;
 }
 .email-birth {
   padding: 20px 0px 0px 20px;
@@ -81,9 +84,8 @@
   height: 43px;
 }
 .button-delete-edit {
-display: flex;
-justify-content: flex-end;
-
+  display: flex;
+  justify-content: flex-end;
 }
 .button-delete-edit img {
   left: 0;
