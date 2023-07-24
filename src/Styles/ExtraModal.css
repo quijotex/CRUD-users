@@ -1,0 +1,65 @@
+.extra-modal {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: #80808081;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.extra-modal.is-Open{
+    display: flex;
+}
+.modal-content {
+  width: 419px;
+  height: 265px;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.modal-content button {
+  width: 70px;
+  height: 45px;
+  background: #555A88;
+  border-style: none;
+  color: white;
+}
+.modal-button {
+  display: flex;
+  gap: 10px;
+}
+.update-modal {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: #80808081;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.update-modal.is-Succesful {
+  display: flex;
+}
+.update-content {
+  width: 419px;
+  height: 265px;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.paragraph {
+   padding: 0px 30px 0px 30px;
+   text-align: justify;
+}

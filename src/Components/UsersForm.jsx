@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 
-const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) => {
+const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible, setIsSuccesful, setSelectedUser}) => {
   const { register, handleSubmit, reset } = useForm();
  
 
@@ -22,18 +22,26 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) 
   const submit = (data) => {
     if (selectedUser){
     editUser(data)
+    editedUser(data)
   } else {
     addUser(data)  
   }
-  }
-  
+  }  
+const editedUser = (change) => {
+  for(let user in change) {
+  if(change[user]  !== selectedUser[user] ) {
+    setSelectedUser(null)
+    setIsVisible(false)
+    setIsSuccesful(true)
+    
+  }}}
 
   return (
     <div className={`div-usersForm ${isVisible? "is-visible" : ""}`}>
     <form className="form-users" onSubmit={handleSubmit(submit)}>
       <div className="title-button">
       <h2>{selectedUser === null? "New user" : "User"}</h2>
-      <button className="button-close" onClick={() => setIsVisible(false)}>x</button>
+      <button className="button-close" onClick={() =>setIsVisible(false)}>x</button>
       </div>
       <div className="input-container">
         <label htmlFor="p-first_name">First Name</label>
@@ -80,7 +88,7 @@ const UsersForm = ({ addUser, selectedUser, editUser, setIsVisible, isVisible}) 
         />
       </div>
       <div className="input-container">
-      <button>{selectedUser === null? "Add new user" : "Update user"}</button>
+      <button onClick={() => setIsVisible(false)}>{selectedUser === null? "Add new user" : "Update user"}</button>
       </div>
     </form>
     </div>

@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
- 
   height: 100vh;
   padding: 0px 50px 100px 50px;
   font-family: 'Roboto', sans-serif;
@@ -43,12 +42,20 @@
   border-radius: 4px;
   border: 1px solid #E5E5E5;
   list-style: none;
-
+  word-wrap: break-word;
+}
+.full-name {
+  display: block;
+  white-space: nowrap;
+  padding-left: 8px;
 }
 .list-user h4 {
   text-align: center;
   font-size: 1.5625rem;
   padding: 20px 0px 0px;
+  max-height: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .list-user img {
  position: relative;
@@ -76,15 +83,16 @@
 .button-delete-edit {
 display: flex;
 justify-content: flex-end;
-gap: 5px;
+
 }
 .button-delete-edit img {
   left: 0;
 }
 .button-delete-edit button {
-  margin: 5px 20px 0px 0px;
+  margin: 10px 20px 0px 0px;
 }
 .button-delete-edit .delete {
   background-color: #D85D5D;
   border-style: none;
+  margin-right: 10px;
 }
