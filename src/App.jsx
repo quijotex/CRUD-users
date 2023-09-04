@@ -22,7 +22,7 @@ function App() {
 
   const getAllUsers = () => {
     axios
-      .get("https://users-crud.academlo.tech/users/")
+      .get("https://backend-userscrud.onrender.com/users/")
       .then((resp) => setUserList(resp.data))
       .catch(() => setIsError(true));
   };
@@ -33,7 +33,7 @@ function App() {
 
   const addUser = (newUser) => {
     axios
-      .post("https://users-crud.academlo.tech/users/", newUser)
+      .post("https://backend-userscrud.onrender.com/users/", newUser)
       .then(() => {getAllUsers(),
       setSelectedUser(undefined)})
       .catch(() => {setIsError(true), setIsCreated(false)});
@@ -41,7 +41,7 @@ function App() {
 
   const deleteUser = (id) => {
     axios
-      .delete(`https://users-crud.academlo.tech/users/${id}/`)
+      .delete(`https://backend-userscrud.onrender.com/users/${id}/`)
       .then(() => getAllUsers())
       .catch(() => {setIsError(true), setIsDelete(false)} );
   };
@@ -52,7 +52,7 @@ function App() {
 
   const editUser = user => {
     axios
-    .put(`https://users-crud.academlo.tech/users/${user.id}/`, user)
+    .put(`https://backend-userscrud.onrender.com/users/${user.id}/`, user)
     .then(() => getAllUsers())
     .catch(() => {setIsSuccesful(false), setIsError(true), setIsVisible(true),  setSelectedUser(user)})
   }
