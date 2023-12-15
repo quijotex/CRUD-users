@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import error from '/Error.svg'
 
 const ExtraModal = ({ isOpen, setIsOpen, deleted, deleteUser, firstName, lastName, isSuccesful, setIsSuccesful, isCreated, setIsCreated, isDelete, setIsDelete, isError, setIsError }) => {

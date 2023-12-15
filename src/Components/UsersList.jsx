@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import line from "/Line.svg"
 import birth from "/Birth.svg"
 import edit from "/Edit.svg"
