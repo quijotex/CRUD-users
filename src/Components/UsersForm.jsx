@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 
