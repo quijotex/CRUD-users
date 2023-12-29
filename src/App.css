@@ -2,6 +2,7 @@
 @import url(./Styles/UsersForm.css);
 @import url(./Styles/ExtraModal.css);
 @import url(./Styles/ResponsiveDesign.css);
+@import url(./Styles/Loader.css);
 
 * {
     margin: 0;

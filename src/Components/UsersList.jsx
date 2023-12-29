@@ -29,12 +29,12 @@ const UsersList = ({ userList, selectUser, setIsVisible, setIsOpen, setIsDeleted
                     {user.birthday}</p>
                 </div>
               <img className="lines" src={line} alt=""/>
-              <div className="button-delete-edit">
-              <button className="delete" onClick={() => {setIsOpen(true);setIsDeleted(user.id); setFirstName(user.first_name); setLastName(user.last_name)}}><img  src={delet} alt=""/></button>
-  
-              <button onClick={() => {selectUser(user); setFirstName(user.first_name); setLastName(user.last_name);
-                 setIsVisible(true)}}><img className="edit" src={edit} alt=""/></button>
-                 </div>
+                <div className="button-delete-edit">
+                  <button className="delete" onClick={() => {setIsOpen(true);setIsDeleted(user.id); setFirstName(user.first_name); setLastName(user.last_name)}}><img  src={delet} alt=""/></button>
+      
+                  <button onClick={() => {selectUser(user); setFirstName(user.first_name); setLastName(user.last_name);
+                    setIsVisible(true)}}><img className="edit" src={edit} alt=""/></button>
+                </div>
             </li>
           ))}
         </ul>

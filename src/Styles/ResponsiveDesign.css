@@ -1,3 +1,9 @@
+@media (max-width: 930px) and (orientation: landscape)  { 
+    .phrases-slider {
+        width: 600px;
+        }
+}
+
 @media screen and (max-width: 768px) {
     html {
         font-size: 12px;
@@ -33,6 +39,11 @@
         width: 310px;
         height: 180px;
     }
+}
+@media (max-width: 550px) and (orientation: landscape) { 
+    .phrases-slider {
+        width: 300px;
+        }
 }
 @media screen and (max-width: 425px) {
     .registered-button {

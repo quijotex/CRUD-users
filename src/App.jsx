@@ -1,11 +1,10 @@
-
 import "./App.css" 
 import UsersForm from "./Components/UsersForm";
 import UsersList from "./Components/UsersList";
 import ExtraModal from "./Components/ExtraModal";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Loader from "./Components/Loader";
 
 function App() {
   const [ userList, setUserList ] = useState([]);
@@ -19,12 +18,15 @@ function App() {
   const [ isCreated, setIsCreated ] = useState(false);
   const [ isDelete, setIsDelete ] = useState(false)
   const [ isError, setIsError ] = useState(false)
+  const [ isLoading, setIsLoading ] = useState(false)
 
   const getAllUsers = () => {
+      setIsLoading(true)
     axios
-      .get("https://users-crud-app-6j9r.onrender.com/users/")
+      .get("https://backend-users-o60o.onrender.com/users/")
       .then((resp) => setUserList(resp.data))
-      .catch(() => setIsError(true));
+      .catch(() => setIsError(true))
+      .finally(() => setIsLoading(false)) 
   };
 
   useEffect(() => {
@@ -33,7 +35,7 @@ function App() {
 
   const addUser = (newUser) => {
     axios
-      .post("https://users-crud-app-6j9r.onrender.com/users/", newUser)
+      .post("https://backend-users-o60o.onrender.com/users/", newUser)
       .then(() => {getAllUsers(),
       setSelectedUser(undefined)})
       .catch(() => {setIsError(true), setIsCreated(false)});
@@ -41,7 +43,7 @@ function App() {
 
   const deleteUser = (id) => {
     axios
-      .delete(`https://users-crud-app-6j9r.onrender.com/users/${id}/`)
+      .delete(`https://backend-users-o60o.onrender.com/users/${id}/`)
       .then(() => getAllUsers())
       .catch(() => {setIsError(true), setIsDelete(false)} );
   };
@@ -52,7 +54,7 @@ function App() {
 
   const editUser = user => {
     axios
-    .put(`https://users-crud-app-6j9r.onrender.com/users/${user.id}/`, user)
+    .put(`https://backend-users-o60o.onrender.com/users/${user.id}/`, user)
     .then(() => getAllUsers())
     .catch(() => {setIsSuccesful(false), setIsError(true), setIsVisible(true),  setSelectedUser(user)})
   }
@@ -100,6 +102,8 @@ function App() {
         setIsError={setIsError}
         isError={isError}
     />
+
+    {isLoading && <Loader/>}
     </main>
   );
 }
